@@ -12,7 +12,7 @@ from errorMsg import errorMsg
 # python insertRow.py [first_n_post (1-*)] [num_of_post]
 
 def _fetch_latest_comment(cursor, post_id, first_n_comment, num_of_comments):
-    sql_select_query = """select * from comment where post_id = %s order by created_at DESC OFFSET %s LIMIT %s """
+    sql_select_query = """select c.id, c.created_at, c.created_by, c.post_id, c.content, c.upvote, u.username  from comment c, _user u where c.post_id = %s and u.id = c.created_by order by c.created_at DESC OFFSET %s LIMIT %s """
     cursor.execute(sql_select_query, (post_id, str(int(first_n_comment) - 1), num_of_comments))
     records = cursor.fetchall()
 
@@ -25,6 +25,7 @@ def _fetch_latest_comment(cursor, post_id, first_n_comment, num_of_comments):
             'post_id': comment[3],
             'content': comment[4],
             'upvote': comment[5],
+            'username': comment[6],
         })
     return serialized_comments
 

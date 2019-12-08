@@ -12,7 +12,7 @@ from errorMsg import errorMsg
 # python insertRow.py [first_n_post (1-*)] [num_of_post]
 
 def _fetch_latest_post(cursor, first_n_post, num_of_posts):
-    sql_select_query = """select * from post order by created_at DESC OFFSET %s LIMIT %s """
+    sql_select_query = """select p.id, p.created_at, p.created_by, p.title, p.content, p.upvote, u.username from post p , _user u where p.created_by = u.id  order by created_at DESC OFFSET %s LIMIT %s """
     cursor.execute(sql_select_query, (str(int(first_n_post) - 1), num_of_posts))
     record = cursor.fetchall()
 
@@ -39,6 +39,7 @@ def fetch_latest_post(first_n_post, num_of_posts):
                 'title': post[3],
                 'content': post[4],
                 'upvote': post[5],
+                'username': post[6],
             })
         print("Latest Post from " + first_n_post + " to " + str(int(first_n_post) + int(num_of_posts)) + "  has been fetched")
         return json.dumps({
