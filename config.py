@@ -1,0 +1,5 @@
+user = "<YOUR_DB_USERNAME>"
+password = "<YOUR_DB_PASSWORD>"
+host = "<DB_HOST_NAME>"
+port = "5432"
+database = "postgres"
