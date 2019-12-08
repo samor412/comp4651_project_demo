@@ -1,4 +1,4 @@
-Installation
+Installation (For Local Test. Not for AWS RDS)
 ------------
 1. install postgres
 2. pg_ctl -D /usr/local/var/postgres start
@@ -7,9 +7,9 @@ Installation
 
 Before Running
 -------------------
-1. create database named "comp4651_project"
+1. create database
 2. change the config.py to set your database authentication information (e.g. user and password of the database)
-3. run python createTable.py
+3. run python createTable.py to create the datatable in the project
 
 Running the backend
 --------------------
@@ -18,7 +18,18 @@ Running the backend
 
 2. Take reference on ./sample.js to see how to call backend api in frontend(using JS)
 
-Explanation
+Run DockerFile:
+----------------------
+1. Go to the root directory of the folder
+
+2. Build Image
+docker build -t comp4651_project .
+
+3. run the container (expose to port 5000)
+docker run -p 5000:5000 comp4651_project
+
+
+Demonstration
 --------------------
 
 1. The backend server is hosted by python with python package Flask
@@ -35,9 +46,6 @@ Explanation
 
 5. The Dockerfile for the backend server.
 ![Image of DockerFile.png](/screenshot/DockerFile.png)
-
-
-
 
 
 Reference:
@@ -66,14 +74,6 @@ https://www.vitoshacademy.com/hashing-passwords-in-python/
 https://blog.miguelgrinberg.com/post/the-new-way-to-generate-secure-tokens-in-python
 https://stackoverflow.com/questions/244882/what-is-the-best-way-to-implement-remember-me-for-a-website
 
-
-Run DockerFile:
-----------------------
-1. Go to the root directory of the folder
-
-2. Build Image
-docker build -t comp4651_project .
-
-3. run the container (expose to port 5000)
-docker run -p 5000:5000 comp4651_project
+8. Dockerize the python application
+https://runnable.com/docker/python/dockerize-your-python-application
 
