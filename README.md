@@ -22,19 +22,19 @@ Explanation
 --------------------
 
 1. The backend server is hosted by python with python package Flask
-![Image of app-py.png](./screenshot/app-py.png)
+![Image of app-py.png](/screenshot/app-py.png)
 
 2. The python files use psycopg2 library to communicate to the database with sql query 
-![Image of psycopg2](./screenshot/psycopg2.png)
+![Image of psycopg2](/screenshot/psycopg2.png)
 
 3. The file sample.js is created to demonstrated to show how to use javascript to communicate to the backend.
-![Image of sample-js.png](./screenshot/sample-js.png)
+![Image of sample-js.png](/screenshot/sample-js.png)
 
 4. The database is hosted in AWS RDS. 
-![Image of ams-rds.png](./screenshot/ams-rds.png)
+![Image of ams-rds.png](/screenshot/ams-rds.png)
 
 5. The Dockerfile for the backend server.
-![Image of DockerFile.png](./screenshot/DockerFile.png)
+![Image of DockerFile.png](/screenshot/DockerFile.png)
 
 
 
