@@ -18,6 +18,27 @@ Running the backend
 
 2. Take reference on ./sample.js to see how to call backend api in frontend(using JS)
 
+Explanation
+--------------------
+
+1. The backend server is hosted by python with python package Flask
+![Image of app-py.png](./screenshot/app-py.png)
+
+2. The python files use psycopg2 library to communicate to the database with sql query 
+![Image of psycopg2](./screenshot/psycopg2.png)
+
+3. The file sample.js is created to demonstrated to show how to use javascript to communicate to the backend.
+![Image of sample-js.png](./screenshot/sample-js.png)
+
+4. The database is hosted in AWS RDS. 
+![Image of ams-rds.png](./screenshot/ams-rds.png)
+
+5. The Dockerfile for the backend server.
+![Image of DockerFile.png](./screenshot/DockerFile.png)
+
+
+
+
 
 Reference:
 ---------------------
